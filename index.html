@@ -4,31 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mosaico HTML</title>
-    <style>
-        /* Estilo para el contenedor del mosaico */
-        .mosaico {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
-            grid-gap: 10px; /* Espacio entre las imágenes */
-        }
-
-        /* Estilo para las imágenes */
-        .mosaico img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ccc; /* Un borde ligero para cada imagen */
-        }
-    </style>
+    <link rel="stylesheet" href="Prueba.css"> <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="mosaico">
-        <!-- Imágenes del mosaico -->
-        <img src="imagen1.jpg" alt="Imagen 1">
-        <img src="imagen2.jpg" alt="Imagen 2">
-        <img src="imagen3.jpg" alt="Imagen 3">
-        <img src="imagen4.jpg" alt="Imagen 4">
-        <img src="imagen5.jpg" alt="Imagen 5">
-        <img src="imagen6.jpg" alt="Imagen 6">
+  <div class="mosaico">
+    <div class="mosaico-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+      <div class="contenido-celda">
+        <p>
+          <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+          <a class="datos">Mujer, 32 años</a><br>
+          <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
+          <a class="datos">Fotografia, Veggie,...</a>
+        </p>
+        <div class="separador"></div> <!-- Separador forzado -->
+        <i class="fa-solid fa-grip-lines"></i>
+        <h3 class="nombre">Gracyvillareal</h3>
+        <div>
+          <div class="fila">
+            <div class="columna">
+              <a class="datos-numeros"><i class="fa-solid fa-users" style="padding-right: 5px;"></i>Audiencia:</a><br>
+            </div>
+            <div class="columna">
+              <a class="numeros">611.01 k</a><br>
+            </div>
+          </div>
+          <div class="fila">
+              <div class="columna">
+                <a class="datos-numeros"><i class="fa-solid fa-user-xmark" style="padding-right: 5px;"></i>Fakes:</a><br>
+              </div>
+              <div class="columna">
+                <a class="numeros">32.57 k</a><br>
+              </div>
+          </div>
+          <div class="fila">
+            <div class="columna">
+              <a class="datos-numeros"><i class="fa-solid fa-heart" style="padding-right: 5px;"></i>Media Eng:</a><br>
+            </div>
+            <div class="columna">
+              <a class="numeros">11.82 k</a><br>
+            </div>
+          </div>
+          <div class="fila">
+            <div class="columna">
+              <a class="datos-numeros"><i class="fa-solid fa-heart-pulse" style="padding-right: 5px;"></i>Eng Rate:</a><br>
+            </div>
+            <div class="columna">
+              <a class="numeros">1,93% k</a><br>
+            </div>
+          </div>
+          <div class="fila">
+            <div class="columna">
+              <a class="datos-numeros"><i class="fa-solid fa-eye" style="padding-right: 5px;"></i>Impresiones:</a><br>
+            </div>
+            <div class="columna">
+              <a class="numeros">272.68 k</a><br>
+            </div>
+          </div>
+        </div> 
     </div>
+  </div>
+  <div class="mosaico-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+    <div class="contenido-celda">
+      <p>
+        <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+        <a class="datos">Mujer, 32 años</a><br>
+        <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
+        <a class="datos">Fotografia, Veggie,...</a>
+      </p>
+      <div class="separador"></div> <!-- Separador forzado -->
+      <i class="fa-solid fa-grip-lines"></i>
+      <h3 class="nombre">Gracyvillareal</h3>
+      <div>
+        <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-users" style="padding-right: 5px;"></i>Audiencia:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">611.01 k</a><br>
+          </div>
+        </div>
+        <div class="fila">
+            <div class="columna">
+              <a class="datos-numeros"><i class="fa-solid fa-user-xmark" style="padding-right: 5px;"></i>Fakes:</a><br>
+            </div>
+            <div class="columna">
+              <a class="numeros">32.57 k</a><br>
+            </div>
+        </div>
+        <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-heart" style="padding-right: 5px;"></i>Media Eng:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">11.82 k</a><br>
+          </div>
+        </div>
+        <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-heart-pulse" style="padding-right: 5px;"></i>Eng Rate:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">1,93% k</a><br>
+          </div>
+        </div>
+        <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-eye" style="padding-right: 5px;"></i>Impresiones:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">272.68 k</a><br>
+          </div>
+        </div>
+      </div> 
+  </div>
+</div>
+<div class="mosaico-item">
+  <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  <div class="contenido-celda">
+    <p>
+      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+      <a class="datos">Mujer, 32 años</a><br>
+      <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
+      <a class="datos">Fotografia, Veggie,...</a>
+    </p>
+    <div class="separador"></div> <!-- Separador forzado -->
+    <i class="fa-solid fa-grip-lines"></i>
+    <h3 class="nombre">Gracyvillareal</h3>
+    <div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-users" style="padding-right: 5px;"></i>Audiencia:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">611.01 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-user-xmark" style="padding-right: 5px;"></i>Fakes:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">32.57 k</a><br>
+          </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart" style="padding-right: 5px;"></i>Media Eng:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">11.82 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart-pulse" style="padding-right: 5px;"></i>Eng Rate:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">1,93% k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-eye" style="padding-right: 5px;"></i>Impresiones:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">272.68 k</a><br>
+        </div>
+      </div>
+    </div> 
+</div>
+</div>
+<div class="mosaico-item">
+  <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  <div class="contenido-celda">
+    <p>
+      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+      <a class="datos">Mujer, 32 años</a><br>
+      <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
+      <a class="datos">Fotografia, Veggie,...</a>
+    </p>
+    <div class="separador"></div> <!-- Separador forzado -->
+    <i class="fa-solid fa-grip-lines"></i>
+    <h3 class="nombre">Gracyvillareal</h3>
+    <div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-users" style="padding-right: 5px;"></i>Audiencia:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">611.01 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-user-xmark" style="padding-right: 5px;"></i>Fakes:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">32.57 k</a><br>
+          </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart" style="padding-right: 5px;"></i>Media Eng:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">11.82 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart-pulse" style="padding-right: 5px;"></i>Eng Rate:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">1,93% k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-eye" style="padding-right: 5px;"></i>Impresiones:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">272.68 k</a><br>
+        </div>
+      </div>
+    </div> 
+</div>
+</div>
+    <!-- Continúa con las demás celdas del mosaico -->
+</div>
 </body>
 </html>
