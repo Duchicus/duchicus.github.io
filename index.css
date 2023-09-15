@@ -1,0 +1,59 @@
+.mosaico-item {
+    border: 2px solid darkgrey; /* Borde de 2 píxeles de ancho y color gris oscuro */
+    padding: 10px; /* Espacio interno alrededor de cada celda */
+    border-radius: 10px; /* Bordes redondeados de 10 píxeles */
+    column-count: 2; /* Divide el contenido en 2 columnas */
+    column-gap: 20px; /* Espacio entre las columnas */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para las imágenes dentro de las celdas */
+.mosaico-item img {
+    border: 1px solid #ccc; /* Un borde ligero para cada imagen */
+    border-radius: 5px; /* Bordes redondeados de 5 píxeles para las imágenes */
+}
+.mosaico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cuatro columnas de igual ancho */
+    grid-gap: 10px; /* Espacio entre las imágenes */
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.columna {
+    flex: 1;
+}
+.separador {
+    break-before: column; /* Forzar la separación antes de este elemento */
+    height: 2px; /* Altura del separador */
+    width: 100%; /* Ancho del separador */
+    margin-bottom: 20px; /* Espacio después del separador */
+}
+.imagen-color:hover {
+    background-color: orange; 
+}
+.datos{
+    padding-bottom: 40px;
+    font-size: 18px;
+    font-family: "Arial", sans-serif;
+    padding-left: 15px;
+}
+.numeros{
+    font-size: 20px;
+    font-family: "Arial", sans-serif;
+    padding-left: 60px;
+}
+.nombre{
+    font-size: 40px;
+    font-family: "Arial", sans-serif;
+    padding-left: 15px;
+}
+.datos-numeros{
+    padding-bottom: 40px;
+    font-size: 18px;
+    font-family: "Arial", sans-serif;
+    padding-left: 15px;
+}
