@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlazar SweetAlert2 -->
+    <link rel="stylesheet" href="lista.css"> <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+<body>
+    <div class="encabezado">
+        <div class="datos_user">
+            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen" style="width: 100px;height: 100px;border-radius: 30px;border-top-right-radius: 60px;border-bottom-left-radius: 60px;border-top-left-radius: 60px;transition: 0.3s;border: 2px solid gray;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+            <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan;">
+                <a style="font-size: 30px;">gracyvillareal</a><br>
+                <i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i><a style="color: #0099cc;">gracyvillarreal</a><br><br>
+                <i class="fas fa-flag" style="color: #c60c30;"></i>ES - <i class="fa-solid fa-venus" style="color: deeppink;"></i> Mujer, 32 años
+            </p>
+        </div>
+        <div class="circulos">
+            <div id="reach" class="circulo"></div>
+            <script>
+                // Configurar el círculo
+                am4core.ready(function() {
+                    // Crear la instancia del círculo (gráfico de tipo PieChart)
+                    var chart = am4core.create("reach", am4charts.PieChart);
+        
+                    // Agregar datos al círculo
+                    chart.data = [
+                        { categoria: "Reach", valor: 100, color:"#7D85F8" },
+                        { categoria: "Reach", valor: 0, color:"#FFFFFF" } // 100 - 70 = 30
+                    ];
+        
+                    // Configurar serie de datos para la parte pintada
+                    var pieSeries = chart.series.push(new am4charts.PieSeries());
+                    pieSeries.dataFields.value = "valor";
+                    pieSeries.dataFields.category = "categoria";
+                    pieSeries.labels.template.disabled = true; // Desactivar etiquetas
+                    pieSeries.ticks.template.disabled = true; // Desactivar marcas de división
+        
+                    // Personalizar la apariencia de la parte pintada
+                    pieSeries.slices.template.propertyFields.fill = "color"; // Cambiar el color
+        
+                    // Configurar el radio del círculo
+                    chart.innerRadius = am4core.percent(70); // Controla el tamaño del agujero en el centro
+        
+                    // Agregar etiqueta de porcentaje en el centro
+                    var label = chart.seriesContainer.createChild(am4core.Label);
+                    label.text = "100%"; // Cambia el valor del porcentaje
+                    label.horizontalCenter = "middle";
+                    label.verticalCenter = "middle";
+                    label.fontSize = 20;
+        
+                });
+            </script>
+            <div id="relevance" class="circulo"></div>
+            <script>
+                // Configurar el círculo
+                am4core.ready(function() {
+                    // Crear la instancia del círculo (gráfico de tipo PieChart)
+                    var chart = am4core.create("relevance", am4charts.PieChart);
+        
+                    // Agregar datos al círculo
+                    chart.data = [
+                        { categoria: "relevance", valor: 83, color:"#ECF315" },
+                        { categoria: "relevance", valor: 17, color:"#FFFFFF" } // 100 - 70 = 30
+                    ];
+        
+                    // Configurar serie de datos para la parte pintada
+                    var pieSeries = chart.series.push(new am4charts.PieSeries());
+                    pieSeries.dataFields.value = "valor";
+                    pieSeries.dataFields.category = "categoria";
+                    pieSeries.labels.template.disabled = true; // Desactivar etiquetas
+                    pieSeries.ticks.template.disabled = true; // Desactivar marcas de división
+        
+                    // Personalizar la apariencia de la parte pintada
+                    pieSeries.slices.template.propertyFields.fill = "color"; // Cambiar el color
+        
+                    // Configurar el radio del círculo
+                    chart.innerRadius = am4core.percent(70); // Controla el tamaño del agujero en el centro
+        
+                    // Agregar etiqueta de porcentaje en el centro
+                    var label = chart.seriesContainer.createChild(am4core.Label);
+                    label.text = "83%"; // Cambia el valor del porcentaje
+                    label.horizontalCenter = "middle";
+                    label.verticalCenter = "middle";
+                    label.fontSize = 20;
+        
+                });
+            </script>
+            <div id="resonance" class="circulo"></div>
+            <script>
+                // Configurar el círculo
+                am4core.ready(function() {
+                    // Crear la instancia del círculo (gráfico de tipo PieChart)
+                    var chart = am4core.create("resonance", am4charts.PieChart);
+        
+                    // Agregar datos al círculo
+                    chart.data = [
+                        { categoria: "resonance", valor: 60, color:"#06F9F1" },
+                        { categoria: "resonance", valor: 40, color:"#FFFFFF" } // 100 - 70 = 30
+                    ];
+        
+                    // Configurar serie de datos para la parte pintada
+                    var pieSeries = chart.series.push(new am4charts.PieSeries());
+                    pieSeries.dataFields.value = "valor";
+                    pieSeries.dataFields.category = "categoria";
+                    pieSeries.labels.template.disabled = true; // Desactivar etiquetas
+                    pieSeries.ticks.template.disabled = true; // Desactivar marcas de división
+        
+                    // Personalizar la apariencia de la parte pintada
+                    pieSeries.slices.template.propertyFields.fill = "color"; // Cambiar el color
+        
+                    // Configurar el radio del círculo
+                    chart.innerRadius = am4core.percent(70); // Controla el tamaño del agujero en el centro
+        
+                    // Agregar etiqueta de porcentaje en el centro
+                    var label = chart.seriesContainer.createChild(am4core.Label);
+                    label.text = "60%"; // Cambia el valor del porcentaje
+                    label.horizontalCenter = "middle";
+                    label.verticalCenter = "middle";
+                    label.fontSize = 20;
+        
+                });
+            </script>
+            
+        </div>  
+        <div class="elementos_externos" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;">
+            <p class="elemento"><i class="fa-solid fa-right-from-bracket"></i> Salir</p>
+            <p class="elemento"><i class="fa-solid fa-download"></i> Descargar influcard</p>
+            <p class="elemento"><i class="fa-solid fa-eye"></i> Ver perfil</p>
+        </div>  
+    </div>
+    <div class="mosaico" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: darkcyan;">
+        <div class="elemento_mosaico"><i class="fa-solid fa-users" style=" background-color: #0099cc; padding: 10px; border-radius: 40px; color:white;"></i> AUDIENCIA</div>
+        <div class="elemento_mosaico"><i class="fa-solid fa-camera-retro" style=" background-color: #0099cc; padding: 10px; border-radius: 40px; color:white;"></i> PUBLICACIONES</div>
+        <div class="elemento_mosaico"><i class="fa-solid fa-chart-line" style=" background-color: #0099cc; padding: 10px; border-radius: 40px; color:white;"></i> DESEMPEÑO</div>
+    </div>
+</body>
+
+</html>
