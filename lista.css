@@ -1,0 +1,44 @@
+.datos_user{
+    display: flex; /* Hace que los elementos se coloquen en fila */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+.imagen{
+    max-width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+.encabezado{
+    display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 500px;
+}
+.circulos{
+    width: 30%;
+    height: 10%;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    padding: 10px;
+    display: flex;
+}
+.elementos_externos{
+    position: absolute;
+    top: 8%;
+    right: 6%;
+    transform: translateY(-50%);
+    padding: 10px;
+}
+.mosaico {
+    display: grid;
+    grid-template-columns: repeat(3, 33%); /* Definir el número de columnas y su tamaño */
+    gap: 10px; /* Espacio entre elementos */
+    padding-top: 3%;
+}
+
+.elemento_mosaico {
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
