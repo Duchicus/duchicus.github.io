@@ -41,7 +41,7 @@
     font-family: 'Open Sans', sans-serif;}
 
 .elemento_mosaico {
-    padding: 20px;
+    padding: 10px;
     font-size: 24px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -51,10 +51,10 @@
     font-size: 24px;
 }
 .elemento_mosaico_datos{
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
-    height: 15%;
-    width: 93%;
+    height: 12%;
+    width: 96%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     column-count: 3; /* Divide el contenido en 3 columnas */
     text-align: center;
@@ -62,7 +62,7 @@
 }
 .grafica {
     width: 91%; /* Ancho de la gráfica */
-    height: 40%;
+    height: 32%;
     margin: 0 auto; /* Centrar la gráfica horizontalmente */
     padding: 20px;
     font-size: 16px;
@@ -73,7 +73,7 @@
 }
 .grafica_horario {
     width: 91%; /* Ancho de la gráfica */
-    height: 27%;
+    height: 18.5%;
     margin: 0 auto; /* Centrar la gráfica horizontalmente */
     padding: 20px;
     font-size: 16px;
@@ -84,7 +84,7 @@
 }
 .grafica_marcas {
     width: 91%; /* Ancho de la gráfica */
-    height: 30%;
+    height: 28.5%;
     margin: 0 auto; /* Centrar la gráfica horizontalmente */
     padding: 20px;
     font-size: 16px;
@@ -94,7 +94,7 @@
 }
 .grafica_edad {
     width: 93%; /* Ancho de la gráfica */
-    height: 45%;
+    height: 35%;
     margin: 0 auto; /* Centrar la gráfica horizontalmente */
     padding: 20px;
     font-size: 16px;
@@ -117,4 +117,7 @@
 }
 .img_marcas{
     width: 80px;
+}
+.img_marcas_clarins{
+    width: 65px;
 }
