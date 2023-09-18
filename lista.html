@@ -131,7 +131,8 @@
         <div class="elementos_externos" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;"><!-- Creacion de elementos externos, (Salir, descargar y perfil) -->
             <p><i class="fa-solid fa-right-from-bracket"></i> Salir</p><!-- crear salida -->
             <button style="background-color: white;border: 0;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;" id="descargarPDF"><p><i class="fa-solid fa-download"></i> Descargar influcard</p></button><!-- Boton para descargar en pdf -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script><!-- Script necesario para descargar la libreria de jsPDF -->
+            <script type="module" src="html2pdf.js-master/src/plugin/jspdf-plugin.js"></script>
+            <script src="html2pdf.js-master/dist/html2pdf.js"></script><!-- Script necesario para descargar la libreria de jsPDF -->
             <script>
                 document.getElementById("descargarPDF").addEventListener("click", function() {
                 // Elemento HTML que deseas convertir a PDF
