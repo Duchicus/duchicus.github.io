@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Enlazar SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link rel="stylesheet" href="index.css"> <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="Prueba.css"> <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="mosaico">
     <div class="mosaico-item">
-      <a href="lista.html" id="enlace">      
+      <a href="Prueba2.html" id="enlace">      
         <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
       </a>
       <script>
@@ -92,10 +92,35 @@
     </div>
   </div>
   <div class="mosaico-item">
-    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+    <a href="Prueba2.html" id="enlace2">      
+      <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+    </a>
+    <script>
+      // Función para mostrar el loader personalizado sin botón "OK"
+      function mostrarLoader() {
+          Swal.fire({
+              title: 'Cargando...',
+              showConfirmButton: false, // Deshabilitar el botón "OK"
+              allowOutsideClick: false, // Impide que los usuarios cierren el diálogo haciendo clic fuera de él
+              onBeforeOpen: () => {
+                  Swal.showLoading();
+              }
+          });
+      }
+
+      // Agregar un manejador de eventos al enlace
+      const enlace2 = document.getElementById('enlace2');
+      enlace2.addEventListener('click', (event) => {
+          event.preventDefault();
+          mostrarLoader();
+          setTimeout(() => {
+              window.location.href = enlace.href;
+          }, 2000);
+      });
+  </script>
     <div class="contenido-celda">
       <p>
-        <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+        <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillarreal</a><br><br>
         <a class="datos">Mujer, 32 años</a><br>
         <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
         <a class="datos">Fotografia, Veggie,...</a>
@@ -148,10 +173,35 @@
   </div>
 </div>
 <div class="mosaico-item">
-  <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  <a href="Prueba2.html" id="enlace3">      
+    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  </a>
+  <script>
+    // Función para mostrar el loader personalizado sin botón "OK"
+    function mostrarLoader() {
+        Swal.fire({
+            title: 'Cargando...',
+            showConfirmButton: false, // Deshabilitar el botón "OK"
+            allowOutsideClick: false, // Impide que los usuarios cierren el diálogo haciendo clic fuera de él
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
+    }
+
+    // Agregar un manejador de eventos al enlace
+    const enlace3 = document.getElementById('enlace3');
+    enlace3.addEventListener('click', (event) => {
+        event.preventDefault();
+        mostrarLoader();
+        setTimeout(() => {
+            window.location.href = enlace.href;
+        }, 2000);
+    });
+</script>
   <div class="contenido-celda">
     <p>
-      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillarreal</a><br><br>
       <a class="datos">Mujer, 32 años</a><br>
       <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
       <a class="datos">Fotografia, Veggie,...</a>
@@ -204,10 +254,35 @@
 </div>
 </div>
 <div class="mosaico-item">
-  <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  <a href="Prueba2.html" id="enlace4">      
+    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  </a>
+  <script>
+    // Función para mostrar el loader personalizado sin botón "OK"
+    function mostrarLoader() {
+        Swal.fire({
+            title: 'Cargando...',
+            showConfirmButton: false, // Deshabilitar el botón "OK"
+            allowOutsideClick: false, // Impide que los usuarios cierren el diálogo haciendo clic fuera de él
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
+    }
+
+    // Agregar un manejador de eventos al enlace
+    const enlace4 = document.getElementById('enlace4');
+    enlace4.addEventListener('click', (event) => {
+        event.preventDefault();
+        mostrarLoader();
+        setTimeout(() => {
+            window.location.href = enlace.href;
+        }, 2000);
+    });
+</script>
   <div class="contenido-celda">
     <p>
-      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillareal </a><br><br>
+      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillarreal</a><br><br>
       <a class="datos">Mujer, 32 años</a><br>
       <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
       <a class="datos">Fotografia, Veggie,...</a>
@@ -257,6 +332,169 @@
         </div>
       </div>
     </div> 
+</div>
+</div>
+<div class="mosaico-item">
+  <a href="Prueba2.html" id="enlace5">      
+    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  </a>
+  <script>
+    // Función para mostrar el loader personalizado sin botón "OK"
+    function mostrarLoader() {
+        Swal.fire({
+            title: 'Cargando...',
+            showConfirmButton: false, // Deshabilitar el botón "OK"
+            allowOutsideClick: false, // Impide que los usuarios cierren el diálogo haciendo clic fuera de él
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
+    }
+
+    // Agregar un manejador de eventos al enlace
+    const enlace5 = document.getElementById('enlace5');
+    enlace5.addEventListener('click', (event) => {
+        event.preventDefault();
+        mostrarLoader();
+        setTimeout(() => {
+            window.location.href = enlace.href;
+        }, 2000);
+    });
+</script>
+  <div class="contenido-celda">
+    <p>
+      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillarreal</a><br><br>
+      <a class="datos">Mujer, 32 años</a><br>
+      <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
+      <a class="datos">Fotografia, Veggie,...</a>
+    </p>
+    <div class="separador"></div> <!-- Separador forzado -->
+    <i class="fa-solid fa-grip-lines"></i>
+    <h3 class="nombre">Gracyvillareal</h3>
+    <div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-users" style="padding-right: 5px;"></i>Audiencia:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">611.01 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-user-xmark" style="padding-right: 5px;"></i>Fakes:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">32.57 k</a><br>
+          </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart" style="padding-right: 5px;"></i>Media Eng:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">11.82 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart-pulse" style="padding-right: 5px;"></i>Eng Rate:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">1,93% k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-eye" style="padding-right: 5px;"></i>Impresiones:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">272.68 k</a><br>
+        </div>
+      </div>
+    </div> 
+</div>
+</div>
+<div class="mosaico-item">
+  <a href="Prueba2.html" id="enlace6">      
+    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Imagen" class="imagen-color" style="width: 100%;height: auto;border: lawngreen solid;border-radius: 30px;border-top-right-radius: 120px;border-bottom-left-radius: 120px;transition: 0.3s;"><!-- Transición suave de 0.3 segundos para el cambio de color -->
+  </a>
+  <script>
+    // Función para mostrar el loader personalizado sin botón "OK"
+    function mostrarLoader() {
+        Swal.fire({
+            title: 'Cargando...',
+            showConfirmButton: false, // Deshabilitar el botón "OK"
+            allowOutsideClick: false, // Impide que los usuarios cierren el diálogo haciendo clic fuera de él
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
+    }
+
+    // Agregar un manejador de eventos al enlace
+    const enlace6 = document.getElementById('enlace6');
+    enlace6.addEventListener('click', (event) => {
+        event.preventDefault();
+        mostrarLoader();
+        setTimeout(() => {
+            window.location.href = enlace.href;
+        }, 2000);
+    });
+</script>
+  <div class="contenido-celda">
+    <p>
+      <a class="datos"><i class="fa-brands fa-instagram" style="color: deeppink; padding: 2px;"></i>gracyvillarreal</a><br><br>
+      <a class="datos">Mujer, 32 años</a><br>
+      <a class="datos"><i class="fas fa-flag" style="color: #c60c30;"></i>España</a><br><br>
+      <a class="datos">Fotografia, Veggie,...</a>
+    </p>
+    <div class="separador"></div> <!-- Separador forzado -->
+    <i class="fa-solid fa-grip-lines"></i>
+    <h3 class="nombre">Gracyvillareal</h3>
+    <div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-users" style="padding-right: 5px;"></i>Audiencia:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">611.01 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+          <div class="columna">
+            <a class="datos-numeros"><i class="fa-solid fa-user-xmark" style="padding-right: 5px;"></i>Fakes:</a><br>
+          </div>
+          <div class="columna">
+            <a class="numeros">32.57 k</a><br>
+          </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart" style="padding-right: 5px;"></i>Media Eng:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">11.82 k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-heart-pulse" style="padding-right: 5px;"></i>Eng Rate:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">1,93% k</a><br>
+        </div>
+      </div>
+      <div class="fila">
+        <div class="columna">
+          <a class="datos-numeros"><i class="fa-solid fa-eye" style="padding-right: 5px;"></i>Impresiones:</a><br>
+        </div>
+        <div class="columna">
+          <a class="numeros">272.68 k</a><br>
+        </div>
+      </div>
+    </div> 
+</div>
 </div>
 </div>
     <!-- Continúa con las demás celdas del mosaico -->
