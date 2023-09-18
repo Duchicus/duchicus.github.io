@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Enlazar SweetAlert2 -->
-    <link rel="stylesheet" href="lista.css"> <!-- Enlace al archivo CSS de lista.css -->
+    <link rel="stylesheet" href="Prueba2.css"> <!-- Enlace al archivo CSS de lista.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Enlazar con los iconos de font-awesome -->
     <script src="https://cdn.amcharts.com/lib/4/core.js"></script><!-- inserts necesarios para usar javaScript -->
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <!--<script type="module" src="jsPDF-master/src/jspdf.js"></script>-->
+    <script src="html2pdf.js-master/dist/html2pdf.js"></script>
+    
 </head>
 <body>
     <div class="encabezado"><!-- Encabezado a usar para la parte superior de la pagina -->
@@ -129,27 +132,55 @@
 
         </div>  
         <div class="elementos_externos" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;"><!-- Creacion de elementos externos, (Salir, descargar y perfil) -->
-            <p><i class="fa-solid fa-right-from-bracket"></i> Salir</p><!-- crear salida -->
-            <button style="background-color: white;border: 0;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;" id="descargarPDF"><p><i class="fa-solid fa-download"></i> Descargar influcard</p></button><!-- Boton para descargar en pdf -->
-            <script type="module" src="html2pdf.js-master/src/plugin/jspdf-plugin.js"></script>
-            <script src="html2pdf.js-master/dist/html2pdf.js"></script><!-- Script necesario para descargar la libreria de jsPDF -->
+            <a href="Prueba.html" id="vuelta"  style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;text-decoration: none;">      
+                <p><i class="fa-solid fa-right-from-bracket"></i><a> Salir</a></p><!-- crear salida -->
+            </a>
+              <script>
+                // Función para mostrar el loader personalizado sin botón "OK"
+                function mostrarLoader() {
+                    Swal.fire({
+                        title: 'Cargando...',
+                        showConfirmButton: false, // Deshabilitar el botón "OK"
+                        allowOutsideClick: false, // Impide que los usuarios cierren el diálogo haciendo clic fuera de él
+                        onBeforeOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+                }
+        
+                // Agregar un manejador de eventos al enlace
+                const vuelta = document.getElementById('vuelta');
+                vuelta.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    mostrarLoader();
+                    setTimeout(() => {
+                        window.location.href = vuelta.href;
+                    }, 2000);
+                });
+            </script>
+            <a style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;" id="descargarPDF"><i class="fa-solid fa-download"></i> <a>Descargar influcard</a></a><!-- Boton para descargar en pdf -->
             <script>
-                document.getElementById("descargarPDF").addEventListener("click", function() {
-                // Elemento HTML que deseas convertir a PDF
-                var elemento = document.body;
-
-                // Opciones de configuración para la conversión
-                var opciones = {
-                    margin: 10,
-                    filename: 'mi_pagina.pdf', // Nombre del archivo PDF
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-                };
-
-                // Iniciar la conversión a PDF y descargar
-                html2pdf().from(elemento).set(opciones).outputPdf();
-            });
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Tu código JavaScript aquí
+                    // Por ejemplo, puedes inicializar HTML2PDF.js y manejar la descarga en PDF aquí
+        
+                    // Evento click para el botón de descarga en PDF
+                    document.getElementById("descargarPDF").addEventListener("click", function () {
+                        // Código para generar y descargar el PDF con HTML2PDF.js
+                        const element = document.body; // Elemento a convertir en PDF (puedes cambiarlo según tus necesidades)
+                        const options = {
+                            margin: 10,
+                            filename: 'mi_documento.pdf', // Nombre del archivo PDF
+                            image: { type: 'jpeg', quality: 0.98 },
+                            html2canvas: { scale: 2 },
+                            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                        };
+        
+                        html2pdf().from(element).set(options).outputPdf(function(pdf) {
+                            pdf.save(); // Descargar el PDF cuando esté listo
+                        });
+                    });
+                });
             </script>
             <p><i class="fa-solid fa-eye"></i> Ver perfil</p><!-- crear ver perfil -->
         </div>  
@@ -207,15 +238,9 @@
                     <a style="color: black;padding-left: 25px; font-size: 12px;">0.17 %</a>
                 </div>
             </div>
-                <div style="column-count: 2;">
-                    <div style="border-right: 2px solid grey;height: 50%;
-                    font-size: 16px;
-                    border-radius: 5px;
-                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-                    border: 1px solid grey;
-                    text-align: center;">
-                            <div id="masculino_femenino" style="width: 60%; height: 170px;">
-                            
+                <div style="column-count: 2;border-right: 2px solid grey;font-size: 16px;border-radius: 5px;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);border: 1px solid grey;text-align: center;height: 39%;">
+                <p>Distribucion por genero</p>
+                            <div id="masculino_femenino" style="width: 100%; height: 170px;  ";>
                             </div>
                             <script>
                                 // Crea una instancia del gráfico de pastel
@@ -255,14 +280,7 @@
                             <br>
                             <a style="padding-right: 10px;"><i class="fa-solid fa-square" style="color:#168FE8;"></i> Masculino</a><a>13.5%</a><br>
                             <a style="padding-right: 10px;"><i class="fa-solid fa-square" style="color:#E816E5"></i> Femenino</a><a>86.5%</a>
-                    </div>
-                    <div style="border-right: 2px solid grey;
-                    font-size: 16px;
-                    border-radius: 5px;
-                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-                    border: 1px solid grey;
-                    text-align: center;">
-                        <p style="text-align: center;">Distribución por país</p>
+                        <p style="text-align: center; padding-top: 10%;">Distribución por país</p>
                         <div style="display: flex; padding: 5px; padding-bottom: 10px;">
                             <a style="color: black;padding-right:26px;padding-left: 45px; font-size: 12px;">ES</a>
                                 <div class="barra" style="width: 47.37px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
@@ -298,8 +316,7 @@
                                 <div class="barra" style="width: 27.19px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
                                 <div class="barra" style="width: 78px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
                             <a style="color: black;padding-left: 10px; font-size: 12px;">27.19 %</a>
-                        </div>
-                    </div>               
+                        </div>              
                 </div>
         </div>
         <div>
@@ -373,37 +390,37 @@
                     <img class="img_marcas" src="https://1000logos.net/wp-content/uploads/2021/04/MAC-Cosmetics-logo.png"><br><p>MAC</p>
                     <img class="img_marcas" src="https://logowik.com/content/uploads/images/550_estee_lauder.jpg"><br><p>Estee Lauder</p>
                     <img class="img_marcas" src="https://cdn.cookielaw.org/logos/aa4aeea2-999e-4d21-a0f6-141d94f268c8/eaa128ce-5edd-4770-8755-6304b2b9ddbf/9c5387f6-ec7b-4c74-8bce-05f61c2e2c1a/NARS_Cosmetics_logo_(1).png"><br><p>NARS</p>
-                    <img class="img_marcas" src="https://magees.ie/blog/wp-content/uploads/2018/07/Clarins-logo.jpg"><br><p>Clarins</p>
+                    <img class="img_marcas_clarins" src="https://magees.ie/blog/wp-content/uploads/2018/07/Clarins-logo.jpg"><br><p>Clarins</p>
                 </div>
             </div>
         </div>
         <div class="elemento_mosaico_desempeño">
-            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 15%;border: 1px solid grey;">
-                <p style=" padding: 10px;"><i class="fa-solid fa-users" style="background-color: black;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 55%;"> Audiencia</a><a> 611.01 k</a></p>
-                <p style=" padding: 10px;"><i class="fa-solid fa-user" style="background-color: darkslategrey;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 59%;"> Alcance</a><a> 212.86 k</a></p>
+            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 12%;border: 1px solid grey;">
+                <p style=" padding-left: 10px;"><i class="fa-solid fa-users" style="background-color: black;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 56%;"> Audiencia</a><a> 611.01 k</a></p>
+                <p style=" padding-left: 10px;"><i class="fa-solid fa-user" style="background-color: darkslategrey;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 59%;"> Alcance</a><a> 212.86 k</a></p>
             </div>
-            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 20%;border: 1px solid grey;">
-                <p style=" padding: 10px;"><i class="fa-solid fa-fingerprint" style="background-color: blue;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 53%;"> Impresiones</a> 272.68 k</p>
+            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 16%;border: 1px solid grey;">
+                <p style=" padding-left: 10px;"><i class="fa-solid fa-fingerprint" style="background-color: blue;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 53%;"> Impresiones</a> 272.68 k</p>
                 <div style="display: flex;padding: 10px;">
-                    <p style="right: 0; padding: 10px;"><a style="padding-left: 200%;">128.1%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
-                    <p style="align-items:end; padding: 10px;"><a style="padding-left: 400%;">44.63%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
+                    <p style="right: 0; padding-bottom: 10px;"><a style="padding-left: 200%;">128.1%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
+                    <p style="align-items:end; padding-bottom: 10px;"><a style="padding-left: 400%;">44.63%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
                 </div>
             </div>
-            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 20%;border: 1px solid grey;">
-                <p style=" padding: 10px;"><i class="fa-solid fa-play"  style="background-color: cornflowerblue;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 48%;"> Reproducciones</a> 131.97 k</p>
+            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 16%;border: 1px solid grey;">
+                <p style=" padding-left: 10px;"><i class="fa-solid fa-play"  style="background-color: cornflowerblue;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 48%;"> Reproducciones</a> 131.97 k</p>
                 <div style="display: flex;padding: 10px;">
-                    <p style="right: 0; padding: 10px;"><a style="padding-left: 200%;">62%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
-                    <p style="align-items:end; padding: 10px;"><a style="padding-left: 400%;">21.6%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
+                    <p style="right: 0; padding-bottom: 10px;"><a style="padding-left: 200%;">62%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
+                    <p style="align-items:end; padding-bottom: 10px;"><a style="padding-left: 400%;">21.6%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
                 </div>
             </div>
-            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 20%;border: 1px solid grey;">
-                <p style="padding: 10px;"><i class="fa-solid fa-heart" style="background-color: #0099cc;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 54%;"> Engagement</a> 11.82 k</p>
+            <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 16%;border: 1px solid grey;">
+                <p style="padding-left: 10px;"><i class="fa-solid fa-heart" style="background-color: #0099cc;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 54%;"> Engagement</a> 11.82 k</p>
                 <div style="display: flex;padding: 10px;">
-                    <p style="right: 0; padding: 10px;"><a  style="padding-left: 200%;">5.55%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
-                    <p style="align-items:end; padding: 10px;"><a style="padding-left: 400%;">1.93%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
+                    <p style="right: 0; padding-bottom: 10px;"><a  style="padding-left: 200%;">5.55%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
+                    <p style="align-items:end; padding-bottom: 10px;"><a style="padding-left: 400%;">1.93%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
                 </div>
             </div>
-            <div id="chartdiv" style="width: 100%; height: 32%; font-size: 15px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);padding: 10px;border: 1px solid grey;"></div>
+            <div id="chartdiv" style="width: 100%; height: 30%; font-size: 15px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);padding: 10px;border: 1px solid grey;"></div>
             <script>
                 // Crea una instancia del gráfico de barras verticales
                 am4core.ready(function() {
