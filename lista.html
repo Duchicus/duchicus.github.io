@@ -129,9 +129,22 @@
             
         </div>  
         <div class="elementos_externos" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;">
-            <p class="elemento"><i class="fa-solid fa-right-from-bracket"></i> Salir</p>
-            <p class="elemento"><i class="fa-solid fa-download"></i> Descargar influcard</p>
-            <p class="elemento"><i class="fa-solid fa-eye"></i> Ver perfil</p>
+            <p><i class="fa-solid fa-right-from-bracket"></i> Salir</p>
+            <button style="background-color: white;border: 0;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkcyan; font-size: 14px;" id="descargarPDF"><p><i class="fa-solid fa-download"></i> Descargar influcard</p></button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+                <script>
+                    document.getElementById("descargarPDF").addEventListener("click", function() {
+                        // Crear una instancia de jsPDF
+                        var doc = new jsPDF();
+                
+                        // Agregar el contenido de la página al PDF
+                        doc.fromHTML(document.documentElement, 15, 15);
+                
+                        // Descargar el PDF con un nombre de archivo predeterminado (puedes cambiarlo)
+                        doc.save("pagina.pdf");
+                    });
+                </script>
+            <p><i class="fa-solid fa-eye"></i> Ver perfil</p>
         </div>  
     </div>
     <div class="mosaico" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: darkcyan;">
@@ -139,36 +152,167 @@
         <div class="elemento_mosaico"><i class="fa-solid fa-camera-retro" style=" background-color: #0099cc; padding: 10px; border-radius: 40px; color:white;"></i> PUBLICACIONES</div>
         <div class="elemento_mosaico"><i class="fa-solid fa-chart-line" style=" background-color: #0099cc; padding: 10px; border-radius: 40px; color:white;"></i> DESEMPEÑO</div>
     </div>
-    <div class="mosaico" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: darkcyan;">
-        <div class="elemento_mosaico_datos">
-            <p class="elemento_mosaico_datos_unicos">Audiencia<br><i class="fa-solid fa-users" style="font-size: 22px;"></i><br>611.01 k</p>
-            <p class="elemento_mosaico_datos_unicos">Seguidores Fake<br><i class="fa-solid fa-users" style="font-size: 22px;"></i><br>5.33 %</p>
-            <p class="elemento_mosaico_datos_unicos">Audiencia Real<br><i class="fa-solid fa-users" style="font-size: 22px;"></i><br>578.45 k</p>
+    <div class="mosaico">
+        <div>
+            <div class="elemento_mosaico_datos" style="height: 100px;">
+                <p class="elemento_mosaico_datos_unicos">Audiencia<br><i class="fa-solid fa-users" style="font-size: 30px;"></i><br><a>611.01 k</a></p>
+                <p class="elemento_mosaico_datos_unicos" style="padding-top: 18px;">Seguidores Fake<br><i class="fa-solid fa-users" style="font-size: 30px;"></i><br><a>5.33 %</a></p>
+                <p class="elemento_mosaico_datos_unicos" style="padding-top: 18px;">Audiencia Real<br><i class="fa-solid fa-users" style="font-size: 30px;"></i><br><a>578.45 k</a></p>
+            </div>
+            <div class="grafica_edad">
+                <!-- Barra 1 -->
+                <p style="text-align: center;">Distribución por edad</p>
+                <div style="display: flex; padding: 5px; padding-bottom: 20px;">
+                    <a style="color: black;padding-right:25px; font-size: 12px;">13-17</a>
+                        <div class="barra" style="width: 52.96px; background-color: #0099cc;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 10px;"></div>
+                        <div class="barra" style="width: 355.04px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;"></div>    
+                    <a style="color: black;padding-left: 25px; font-size: 12px;">9.27 %</a>
+                </div>
+                <div style="display: flex; padding: 5px; padding-bottom: 20px;">
+                    <a style="color: black;padding-right: 25px; font-size: 12px;">18-24</a>
+                    <div class="barra" style="width: 80.4px; background-color: #0099cc;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 10px;"></div>
+                    <div class="barra" style="width: 319.6px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;"></div>
+                    <a style="color: black;padding-left: 25px; font-size: 12px;">14.07 %</a>
+                </div>
+                <div style="display: flex; padding: 5px; padding-bottom: 20px;">
+                    <a style="color: black;padding-right: 25px; font-size: 12px;">25-34</a>
+                    <div class="barra" style="width: 219.68px; background-color: #0099cc;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 10px;"></div>
+                    <div class="barra" style="width: 180.32px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;"></div>
+                    <a style="color: black;padding-left: 25px; font-size: 12px;">54.92 %</a>
+                </div>
+                <div style="display: flex; padding: 5px; padding-bottom: 20px;">
+                    <a style="color: black;padding-right: 25px; font-size: 12px;">35-44</a>
+                    <div class="barra" style="width: 101.36px; background-color: #0099cc;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 10px;"></div>
+                    <div class="barra" style="width: 298.64px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;"></div>
+                    <a style="color: black;padding-left: 25px; font-size: 12px;">17.74 %</a>
+                </div>
+                <div style="display: flex; padding: 5px; padding-bottom: 20px;">
+                    <a style="color: black;padding-right: 25px; font-size: 12px;">45-64</a>
+                    <div class="barra" style="width: 22px; background-color: #0099cc;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 10px;"></div>
+                    <div class="barra" style="width: 378px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;"></div>
+                    <a style="color: black;padding-left: 25px; font-size: 12px;">3.85 %</a>
+                </div>
+                <div style="display: flex; padding: 5px; padding-bottom: 20px;">
+                    <a style="color: black;padding-right: 25px; font-size: 12px;">65 +</a>
+                    <div class="barra" style="width: 0.96px; background-color: #0099cc;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 10px;"></div>
+                    <div class="barra" style="width: 399.04px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;"></div>
+                    <a style="color: black;padding-left: 25px; font-size: 12px;">0.17 %</a>
+                </div>
+            </div>
+            <div class="grafica_genero_pais">
+                <div style="column-count: 2">
+                    <div style="border-right: 2px solid grey;">
+                        <div>
+                            <div id="masculino_femenino" style="width: 60%; height: 170px;">
+                            
+                            </div>
+                            <script>
+                                // Crea una instancia del gráfico de pastel
+                                am4core.ready(function() {
+                                    // Configura el tema y crea el gráfico
+                                    am4core.useTheme(am4themes_animated);
+                                    var chart = am4core.create("masculino_femenino", am4charts.PieChart);
+                            
+                                    // Define los datos
+                                    chart.data = [
+                                        {
+                                            "genero": "Masculino",
+                                            "porcentaje": 13.5,
+                                            "color": "#168FE8"
+                                        },
+                                        {
+                                            "genero": "Femenino",
+                                            "porcentaje": 86.5,
+                                            "color": "#E816E5"
+                                        }
+                                    ];
+                            
+                                    // Crea la serie de pastel
+                                    var pieSeries = chart.series.push(new am4charts.PieSeries());
+                                    pieSeries.dataFields.value = "porcentaje";
+                                    pieSeries.dataFields.category = "genero";
+                                    pieSeries.slices.template.tooltipText = "{category}: {value}%";
+    
+                                    pieSeries.slices.template.propertyFields.fill = "color";
+    
+                                    pieSeries.labels.template.disabled = true
+    
+                                    // Habilita las animaciones
+                                    chart.hiddenState.properties.opacity = 1; // Asegura que el gráfico esté completamente visible
+                                });
+                            </script>
+                            <br>
+                            <a style="padding-right: 10px;"><i class="fa-solid fa-square" style="color:#168FE8;"></i> Masculino</a><a>13.5%</a><br>
+                            <a style="padding-right: 10px;"><i class="fa-solid fa-square" style="color:#E816E5"></i> Femenino</a><a>86.5%</a>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <!-- Barra 1 -->
+                        <p style="text-align: center;">Distribución por país</p>
+                        <div style="display: flex; padding: 5px; padding-bottom: 10px;">
+                            <a style="color: black;padding-right:26px;padding-left: 45px; font-size: 12px;">ES</a>
+                                <div class="barra" style="width: 47.37px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
+                                <div class="barra" style="width: 53px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
+                            <a style="color: black;padding-left: 10px; font-size: 12px;">47.37 %</a>
+                        </div>
+                        <div style="display: flex; padding: 5px; padding-bottom: 10px;">
+                            <a style="color: black;padding-right:25px;padding-left: 45px; font-size: 12px;">EU</a>
+                                <div class="barra" style="width: 11.84px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
+                                <div class="barra" style="width: 89px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
+                            <a style="color: black;padding-left: 10px; font-size: 12px;">11.84 %</a>
+                        </div>
+                        <div style="display: flex; padding: 5px; padding-bottom: 10px;">
+                            <a style="color: black;padding-right:22px;padding-left: 45px; font-size: 12px;">MX</a>
+                                <div class="barra" style="width: 5.67px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
+                                <div class="barra" style="width: 95px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
+                            <a style="color: black;padding-left: 10px; font-size: 12px;">5.67 %</a>
+                        </div>
+                        <div style="display: flex; padding: 5px; padding-bottom: 10px;">
+                            <a style="color: black;padding-right:26px;padding-left: 45px; font-size: 12px;">FR</a>
+                                <div class="barra" style="width: 4.05px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
+                                <div class="barra" style="width: 96px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
+                            <a style="color: black;padding-left: 10px; font-size: 12px;">4.05 %</a>
+                        </div>
+                        <div style="display: flex; padding: 5px; padding-bottom: 10px;">
+                            <a style="color: black;padding-right:30px;padding-left: 45px; font-size: 12px;">IT</a>
+                                <div class="barra" style="width: 3.68px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
+                                <div class="barra" style="width: 97px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
+                            <a style="color: black;padding-left: 10px; font-size: 12px;">3.68 %</a>
+                        </div>
+                        <div style="display: flex; padding: 5px; padding-bottom: 10px;">
+                            <a style="color: black;padding-right:10px;padding-left: 45px; font-size: 12px;">Otros</a>
+                                <div class="barra" style="width: 27.19px; background-color: #c60c30;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 5px;"></div>
+                                <div class="barra" style="width: 78px; background-color: gray;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 5px;"></div>    
+                            <a style="color: black;padding-left: 10px; font-size: 12px;">27.19 %</a>
+                        </div>
+                    </div>               
+                </div>
+            </div>
         </div>
         <div>
             <div class="grafica">
                 <!-- Barra 1 -->
                 <p style="text-align: center;">Distribución de su publicaciones por territorios</p>
                 <div style="display: flex;">
-                    <a style="color: black;padding-right: 20px;">Moda</a>
+                    <a style="color: black;padding-right: 45px;">Moda</a>
                     <div class="barra" style="width: 35.7%; background-color: yellow;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 25px;">
                         <div class="etiqueta">35.7%</div>
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <a style="color: black;padding-right: 20px;">Belleza</a>
+                    <a style="color: black;padding-right: 35px;">Belleza</a>
                     <div class="barra" style="width: 24.0%; background-color: orange;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 25px;">
                         <div class="etiqueta">24.0%</div>
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <a style="color: black;padding-right: 20px;">Familia</a>
+                    <a style="color: black;padding-right: 35px;">Familia</a>
                     <div class="barra" style="width: 15.2%; background-color: purple;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 25px;">
                         <div class="etiqueta">15.2%</div>
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <a style="color: black;padding-right: 20px;">Viajes</a>
+                    <a style="color: black;padding-right: 45px;">Viajes</a>
                     <div class="barra" style="width: 9.5%; background-color: darkslateblue;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 25px;">
                         <div class="etiqueta">9.5%</div>
                     </div>
@@ -180,13 +324,13 @@
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <a style="color: black;padding-right: 20px;">Cultura</a>
+                    <a style="color: black;padding-right: 35px;">Cultura</a>
                     <div class="barra" style="width: 5.2%; background-color: darksalmon;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 25px;">
                         <div class="etiqueta">5.2%</div>
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <a style="color: black;padding-right: 20px;">Otras</a>
+                    <a style="color: black;padding-right: 40px;">Otras</a>
                     <div class="barra" style="width: 0%;background-color: chartreuse;border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 25px;">
                         <div class="etiqueta">0%</div>
                     </div>
@@ -196,46 +340,59 @@
                 <!-- Barra 1 -->
                 <p style="text-align: center;">Franja horaria de sus publicaciones</p>
                 <div style="display: flex;">
-                    <a style="padding: 10px;color: black;">Mañana</a><i class="fa-solid fa-sun" style="background-color: yellow; padding: 10px;border-radius: 40%; height: 20px;color: black;"></i>
+                    <a style="padding: 10px;color: black;padding-right: 10px;">Mañana</a><i class="fa-solid fa-sun" style="background-color: yellow; padding: 10px;border-radius: 40%; height: 20px;color: black;"></i>
                     <p class="barra" style="width: 70%;height: 10px; background-color: yellow;border-top-right-radius: 10px;border-bottom-right-radius: 10px;"></p>
                 </div>
                 <div style="display: flex;">
-                    <a style="padding: 10px;color: black;">Tarde</a> <i class="fa-solid fa-cloud-sun" style="background-color: orange;padding: 10px;border-radius: 40%; height: 20px;color: black;"></i>
+                    <a style="padding: 10px;color: black;padding-right: 25px;">Tarde</a> <i class="fa-solid fa-cloud-sun" style="background-color: orange;padding: 10px;border-radius: 40%; height: 20px;color: black;"></i>
                     <p class="barra" style="width: 70%;height: 10px; background-color: orange;border-top-right-radius: 10px;border-bottom-right-radius: 10px;"></p>
                 </div>
                 <div style="display: flex;">
-                    <a style="padding: 10px;color: black;">Noche</a> <i class="fa-solid fa-moon" style="background-color: grey;padding: 10px;border-radius: 40%; height: 20px;color: black;"></i>
+                    <a style="padding: 10px;color: black;padding-right: 25px;">Noche</a> <i class="fa-solid fa-moon" style="background-color: grey;padding: 10px;border-radius: 40%; height: 20px;color: black;"></i>
                     <p class="barra" style="width: 50%;height: 10px;background-color: grey;border-top-right-radius: 10px;border-bottom-right-radius: 10px;text-align: center;"></p>
+                </div>
+            </div>
+            <div class="grafica_marcas">
+                <p style="text-align: center;">Marcas con las que ha trabajado</p>
+                <div style="column-count: 4;text-align: center;">
+                    <img class="img_marcas" style="width: 90px;height: 50px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Benefit_Cosmetics_logo.png?Benefit_Cosmetics1171602529"><br><p>Benefit</p>
+                    <img class="img_marcas" style="width: 90px;height: 50px;" src="https://logos-world.net/wp-content/uploads/2021/11/YSL-Logo.png"><br><p>YSL</p>
+                    <img class="img_marcas" src="https://1000logos.net/wp-content/uploads/2021/04/NYX-logo.png"><br><p>NYX</p>
+                    <img class="img_marcas" src="https://logowik.com/content/uploads/images/guerlain8000.jpg"><br><p>Guerlain</p>
+                    <img class="img_marcas" src="https://1000logos.net/wp-content/uploads/2021/04/MAC-Cosmetics-logo.png"><br><p>MAC</p>
+                    <img class="img_marcas" src="https://logowik.com/content/uploads/images/550_estee_lauder.jpg"><br><p>Estee Lauder</p>
+                    <img class="img_marcas" src="https://cdn.cookielaw.org/logos/aa4aeea2-999e-4d21-a0f6-141d94f268c8/eaa128ce-5edd-4770-8755-6304b2b9ddbf/9c5387f6-ec7b-4c74-8bce-05f61c2e2c1a/NARS_Cosmetics_logo_(1).png"><br><p>NARS</p>
+                    <img class="img_marcas" src="https://magees.ie/blog/wp-content/uploads/2018/07/Clarins-logo.jpg"><br><p>Clarins</p>
                 </div>
             </div>
         </div>
         <div class="elemento_mosaico_desempeño">
             <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 15%;border: 1px solid grey;">
-                <p style=" padding: 10px;"><i class="fa-solid fa-users" style="background-color: black;padding: 8px;border-radius: 50%; color: white;"></i><a> Audiencia</a><a> 611.01 k</a></p>
-                <p style=" padding: 10px;"><i class="fa-solid fa-user" style="background-color: darkslategrey;padding: 8px;border-radius: 50%; color: white;"></i><a> Alcance</a><a> 212.86 k</a></p>
+                <p style=" padding: 10px;"><i class="fa-solid fa-users" style="background-color: black;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 60%;"> Audiencia</a><a> 611.01 k</a></p>
+                <p style=" padding: 10px;"><i class="fa-solid fa-user" style="background-color: darkslategrey;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 64%;"> Alcance</a><a> 212.86 k</a></p>
             </div>
             <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 20%;border: 1px solid grey;">
-                <p style=" padding: 10px;"><i class="fa-solid fa-fingerprint" style="background-color: blue;padding: 8px;border-radius: 50%; color: white;"></i><a> Impresiones</a> 272.68 k</p>
+                <p style=" padding: 10px;"><i class="fa-solid fa-fingerprint" style="background-color: blue;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 58%;"> Impresiones</a> 272.68 k</p>
                 <div style="display: flex;padding: 10px;">
-                    <p style="right: 0; padding: 10px;"><a>128.1%</a><br>Alcance</p>          
-                    <p style="align-items:end; padding: 10px;"><a>44.63%</a><br>Audiencia</p>   
+                    <p style="right: 0; padding: 10px;"><a style="padding-left: 200%;">128.1%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
+                    <p style="align-items:end; padding: 10px;"><a style="padding-left: 400%;">44.63%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
                 </div>
             </div>
             <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 20%;border: 1px solid grey;">
-                <p style=" padding: 10px;"><i class="fa-solid fa-play"  style="background-color: cornflowerblue;padding: 8px;border-radius: 50%; color: white;"></i><a> Reproducciones</a> 131.97 k</p>
+                <p style=" padding: 10px;"><i class="fa-solid fa-play"  style="background-color: cornflowerblue;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 53%;"> Reproducciones</a> 131.97 k</p>
                 <div style="display: flex;padding: 10px;">
-                    <p style="right: 0; padding: 10px;"><a>62%</a><br>Alcance</p>          
-                    <p style="align-items:end; padding: 10px;"><a>21.6%</a><br>Audiencia</p>   
+                    <p style="right: 0; padding: 10px;"><a style="padding-left: 200%;">62%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
+                    <p style="align-items:end; padding: 10px;"><a style="padding-left: 400%;">21.6%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
                 </div>
             </div>
             <div style="font-size: 16px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);height: 20%;border: 1px solid grey;">
-                <p style="padding: 10px;"><i class="fa-solid fa-heart" style="background-color: #0099cc;padding: 8px;border-radius: 50%; color: white;"></i><a> Engagement</a> 11.82 k</p>
+                <p style="padding: 10px;"><i class="fa-solid fa-heart" style="background-color: #0099cc;padding: 8px;border-radius: 50%; color: white;"></i><a style="padding-right: 59%;"> Engagement</a> 11.82 k</p>
                 <div style="display: flex;padding: 10px;">
-                    <p style="right: 0; padding: 10px;"><a>5.55%</a><br>Alcance</p>          
-                    <p style="align-items:end; padding: 10px;"><a>1.93%</a><br>Audiencia</p>   
+                    <p style="right: 0; padding: 10px;"><a  style="padding-left: 200%;">5.55%</a><br><a style="padding-left: 200%;">Alcance</a></p>          
+                    <p style="align-items:end; padding: 10px;"><a style="padding-left: 400%;">1.93%</a><br><a style="padding-left: 400%;">Audiencia</a></p>   
                 </div>
             </div>
-            <div id="chartdiv" style="width: 100%; height: 30%; font-size: 15px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);padding: 10px;border: 1px solid grey;"></div>
+            <div id="chartdiv" style="width: 100%; height: 32%; font-size: 15px;border-radius: 5px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);padding: 10px;border: 1px solid grey;"></div>
             <script>
                 // Crea una instancia del gráfico de barras verticales
                 am4core.ready(function() {
